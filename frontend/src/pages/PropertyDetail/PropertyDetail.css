@@ -1,0 +1,202 @@
+.property-detail {
+  padding: 2rem;
+  min-height: calc(100vh - 200px);
+  background: #E7E9F0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.btn-back {
+  padding: 0.75rem 1.5rem;
+  background: #051747;
+  color: #FEFEFE;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-bottom: 2rem;
+}
+
+.btn-back:hover {
+  background: #081F62;
+}
+
+.property-detail-content {
+  background: #FEFEFE;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(5, 23, 71, 0.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.property-detail-image {
+  background: linear-gradient(135deg, #051747 0%, #081F62 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: 2rem;
+}
+
+.property-emoji-large {
+  font-size: 10rem;
+}
+
+.property-detail-info {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.property-detail-title {
+  font-size: 2.5rem;
+  color: #051747;
+  margin: 0;
+  font-weight: 700;
+}
+
+.property-detail-location {
+  font-size: 1.2rem;
+  color: #535F80;
+  margin: 0;
+}
+
+.property-detail-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #F5F6FA;
+  border-radius: 8px;
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.spec-icon {
+  font-size: 1.5rem;
+}
+
+.spec-label {
+  flex: 1;
+  color: #535F80;
+  font-weight: 500;
+}
+
+.spec-value {
+  color: #051747;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.property-detail-price-section {
+  padding-top: 1.5rem;
+  border-top: 2px solid #E7E9F0;
+}
+
+.property-detail-price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #051747;
+  margin: 0;
+}
+
+.property-detail-actions {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #E7E9F0;
+}
+
+.btn-talk-to-broker {
+  flex: 1;
+  padding: 1rem 2rem;
+  background: #051747;
+  color: #FEFEFE;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-talk-to-broker:hover {
+  background: #081F62;
+  transform: translateY(-2px);
+}
+
+.btn-view {
+  padding: 1rem 2rem;
+  background: transparent;
+  color: #051747;
+  border: 2px solid #051747;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-view:hover {
+  background: #051747;
+  color: #FEFEFE;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  color: #535F80;
+}
+
+@media (max-width: 768px) {
+  .property-detail {
+    padding: 1rem;
+  }
+
+  .property-detail-content {
+    grid-template-columns: 1fr;
+  }
+
+  .property-detail-image {
+    min-height: 250px;
+  }
+
+  .property-emoji-large {
+    font-size: 6rem;
+  }
+
+  .property-detail-info {
+    padding: 2rem;
+  }
+
+  .property-detail-title {
+    font-size: 1.8rem;
+  }
+
+  .property-detail-price {
+    font-size: 2rem;
+  }
+
+  .property-detail-actions {
+    flex-direction: column;
+  }
+
+  .btn-talk-to-broker,
+  .btn-view {
+    width: 100%;
+  }
+}
+

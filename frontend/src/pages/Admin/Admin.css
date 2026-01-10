@@ -1,0 +1,242 @@
+.admin-page {
+  min-height: calc(100vh - 80px);
+  padding: 3rem 2rem;
+  background: #E7E9F0;
+}
+
+.admin-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.admin-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.admin-header h1 {
+  font-size: 2.5rem;
+  color: #051747;
+  margin-bottom: 0.5rem;
+}
+
+.admin-header p {
+  color: #535F80;
+  font-size: 1.1rem;
+}
+
+.error-banner {
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+.admin-actions {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-add-property {
+  padding: 0.75rem 2rem;
+  background: #051747;
+  color: #FEFEFE;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-add-property:hover {
+  background: #081F62;
+  transform: translateY(-2px);
+}
+
+.add-property-form {
+  background: #FEFEFE;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 6px rgba(5, 23, 71, 0.1);
+}
+
+.add-property-form h2 {
+  color: #051747;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  color: #051747;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.form-group input {
+  padding: 0.75rem;
+  border: 2px solid #E7E9F0;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #051747;
+  background: #fff;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #051747;
+}
+
+.btn-submit-form {
+  padding: 0.75rem 2rem;
+  background: #051747;
+  color: #FEFEFE;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 1rem;
+}
+
+.btn-submit-form:hover {
+  background: #081F62;
+}
+
+.properties-list {
+  background: #FEFEFE;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(5, 23, 71, 0.1);
+}
+
+.properties-list h2 {
+  color: #051747;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.no-properties {
+  text-align: center;
+  color: #535F80;
+  font-size: 1.1rem;
+  padding: 3rem;
+}
+
+.admin-properties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.admin-property-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(5, 23, 71, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.admin-property-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(5, 23, 71, 0.15);
+}
+
+.admin-property-image {
+  height: 180px;
+  background: linear-gradient(135deg, #051747 0%, #081F62 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.property-emoji {
+  font-size: 4rem;
+}
+
+.admin-property-content {
+  padding: 1.5rem;
+}
+
+.admin-property-content h3 {
+  color: #051747;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.property-location {
+  color: #535F80;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.property-details {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: #535F80;
+}
+
+.property-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #051747;
+  margin-bottom: 1rem;
+}
+
+.btn-delete {
+  width: 100%;
+  padding: 0.6rem;
+  background: #dc2626;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-delete:hover {
+  background: #b91c1c;
+}
+
+@media (max-width: 768px) {
+  .admin-page {
+    padding: 2rem 1rem;
+  }
+
+  .admin-header h1 {
+    font-size: 2rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-properties-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

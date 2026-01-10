@@ -1,0 +1,115 @@
+.header {
+  background: #FEFEFE;
+  box-shadow: 0 2px 10px rgba(5, 23, 71, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  color: #051747;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #535F80;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #051747;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btn-login,
+.btn-register,
+.btn-logout {
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-login {
+  background: transparent;
+  color: #051747;
+  border: 2px solid #051747;
+}
+
+.btn-login:hover {
+  background: #051747;
+  color: #FEFEFE;
+}
+
+.btn-register {
+  background: #051747;
+  color: #FEFEFE;
+}
+
+.btn-register:hover {
+  background: #081F62;
+}
+
+.btn-logout {
+  background: #ef4444;
+  color: #fff;
+}
+
+.btn-logout:hover {
+  background: #dc2626;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-name {
+  color: #535F80;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+}
+
