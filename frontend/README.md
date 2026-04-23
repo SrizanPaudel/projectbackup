@@ -68,3 +68,9 @@ The frontend connects to the backend API at `http://localhost:5000`:
 - Authentication: `/auth/login`, `/auth/register`
 - Users: `/users`, `/users/:id`
 
+
+## MapBox installation
+
+-npm install mapbox-gl
+-npm install @mapbox/mapbox-gl-geocoder
+
