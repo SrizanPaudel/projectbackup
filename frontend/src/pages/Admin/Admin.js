@@ -3,6 +3,7 @@ import { useProperties } from '../../context/PropertiesContext';
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import './Admin.css';
+import MapPicker from './MapPicker'; 
 
 const Admin = () => {
   const { properties, addProperty, removeProperty, loading, error } = useProperties();
@@ -12,7 +13,8 @@ const Admin = () => {
   const [submitting, setSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     title: '',
-    location: '',
+   location: '',
+coordinates: null,
     price: '',
     bedrooms: '',
     bathrooms: '',
@@ -37,22 +39,29 @@ const Admin = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!formData.coordinates) {
+    alert("Please select a precise location on the map first!");
+    return;
+  }
     setSubmitting(true);
     
-    const newProperty = {
-      ...formData,
-      price: `Rs. ${formData.price}/month`,
-      bedrooms: parseInt(formData.bedrooms),
-      bathrooms: parseInt(formData.bathrooms),
-    };
-    
-    const result = await addProperty(newProperty);
+   const newProperty = {
+    ...formData, // This carries over 'title', 'location', 'price', etc.
+    // Ensure coordinates are structured for your backend/map view later
+    coordinates: formData.coordinates, 
+    price: `Rs. ${formData.price}/month`,
+    bedrooms: parseInt(formData.bedrooms),
+    bathrooms: parseInt(formData.bathrooms),
+  };
+  
+  const result = await addProperty(newProperty);
     setSubmitting(false);
     
     if (result.success) {
       setFormData({
         title: '',
         location: '',
+        coordinates: null,
         price: '',
         bedrooms: '',
         bathrooms: '',
@@ -117,18 +126,19 @@ const Admin = () => {
                     placeholder="e.g., Modern Apartment in Thamel"
                   />
                 </div>
-                <div className="form-group">
-                  <label htmlFor="location">Location</label>
-                  <input
-                    type="text"
-                    id="location"
-                    name="location"
-                    value={formData.location}
-                    onChange={handleInputChange}
-                    required
-                    placeholder="e.g., Kathmandu, Bagmati"
-                  />
-                </div>
+              <div className="form-group" style={{ gridColumn: "span 2" }}>
+  <label>Property Precise Location</label>
+  <MapPicker 
+    currentCoords={formData.coordinates}
+    setCoordinates={(coords) => setFormData({ ...formData, coordinates: coords })} 
+    setLocationName={(name) => setFormData(prev => ({ ...prev, location: name }))}
+  />
+  {formData.location && (
+    <p style={{ marginTop: '10px', fontSize: '13px', color: '#555' }}>
+      <strong>Selected:</strong> {formData.location}
+    </p>
+  )}
+</div>
               </div>
 
               <div className="form-row">
