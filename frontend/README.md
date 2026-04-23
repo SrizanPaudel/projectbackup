@@ -72,5 +72,6 @@ The frontend connects to the backend API at `http://localhost:5000`:
 ## MapBox installation
 
 -npm install mapbox-gl
+
 -npm install @mapbox/mapbox-gl-geocoder
 
